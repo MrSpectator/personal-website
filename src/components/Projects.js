@@ -11,18 +11,24 @@ const Projects = () => {
       description: 'A full-stack e-commerce solution built with Django and React, featuring user authentication, product management, and secure payments.',
       image: 'https://via.placeholder.com/400x250',
       technologies: ['React', 'Django', 'PostgreSQL'],
+      github: 'https://github.com/MrSpectator/Ecommerce-Platform',
+      demo: '#'
     },
     {
-      title: 'Task Management System',
-      description: 'A collaborative task management application with real-time updates, built using React and Django REST framework.',
+      title: 'Email System',
+      description: 'A robust email management system built with modern technologies, handling email communications efficiently and securely.',
       image: 'https://via.placeholder.com/400x250',
-      technologies: ['React', 'Django REST', 'WebSocket'],
+      technologies: ['Python', 'Django', 'SMTP'],
+      github: 'https://github.com/MrSpectator/Email',
+      demo: '#'
     },
     {
       title: 'Portfolio Website',
       description: 'A modern and responsive portfolio website showcasing projects and skills, built with React and Material-UI.',
       image: 'https://via.placeholder.com/400x250',
       technologies: ['React', 'Material-UI', 'Framer Motion'],
+      github: 'https://github.com/MrSpectator/personal-website',
+      demo: '#'
     },
   ];
 
@@ -98,12 +104,24 @@ const Projects = () => {
                       </Box>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" startIcon={<GitHubIcon />}>
+                      <Button 
+                        size="small" 
+                        startIcon={<GitHubIcon />}
+                        href={project.github}
+                        target="_blank"
+                      >
                         Code
                       </Button>
-                      <Button size="small" startIcon={<LaunchIcon />}>
-                        Demo
-                      </Button>
+                      {project.demo && (
+                        <Button 
+                          size="small" 
+                          startIcon={<LaunchIcon />}
+                          href={project.demo}
+                          target="_blank"
+                        >
+                          Demo
+                        </Button>
+                      )}
                     </CardActions>
                   </Card>
                 </motion.div>
