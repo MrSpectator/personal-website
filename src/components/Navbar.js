@@ -49,9 +49,10 @@ const Navbar = () => {
     <AppBar 
       position="fixed" 
       sx={{
-        backgroundColor: isScrolled ? 'white' : 'transparent',
-        boxShadow: isScrolled ? 1 : 'none',
+        background: 'linear-gradient(to right, black, purple)',
+        boxShadow: isScrolled ? 'none' : 1,
         transition: 'all 0.3s',
+        transform: isScrolled ? 'translateY(-100%)' : 'translateY(0)',
       }}
     >
       <Toolbar>
@@ -61,7 +62,7 @@ const Navbar = () => {
           sx={{ 
             flexGrow: 1,
             fontWeight: 'bold',
-            color: isScrolled ? 'primary.main' : 'white'
+            color: 'white'
           }}
         >
           Oluwatoni Sobande
@@ -74,7 +75,7 @@ const Navbar = () => {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: isScrolled ? 'primary.main' : 'white' }}
+              sx={{ color: 'white' }}
             >
               <MenuIcon />
             </IconButton>

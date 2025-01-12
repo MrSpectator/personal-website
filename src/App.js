@@ -1,52 +1,36 @@
 import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import Navbar from './components/Navbar';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import theme from './theme';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2563eb',
-    },
-    secondary: {
-      main: '#3b82f6',
-    },
-    background: {
-      default: '#f8f9fa',
-      paper: '#ffffff',
-    },
-  },
-  typography: {
-    fontFamily: "'Poppins', sans-serif",
-    h1: {
-      fontWeight: 700,
-    },
-    h2: {
-      fontWeight: 600,
-    },
-    h3: {
-      fontWeight: 600,
-    },
-  },
-});
-
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <Box
+        sx={{
+          bgcolor: 'background.default',
+          color: 'text.primary',
+          minHeight: '100vh',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <Navbar />
+        <div className="custom-cursor"></div>
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
