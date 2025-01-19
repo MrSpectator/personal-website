@@ -178,6 +178,10 @@ const Hero = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            position: "absolute",
+            bottom: 30,
+            left: "50%",
+            transform: "translateX(-50%)",
           }}
           onClick={handleScroll}
         >
