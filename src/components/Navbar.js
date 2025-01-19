@@ -87,7 +87,7 @@ const Navbar = () => {
               <List sx={{ width: 250 }}>
                 {navItems.map((item) => (
                   <ListItem key={item}>
-                    <NavLink to={item}>{item}</NavLink>
+                    <NavLink to={item.toLowerCase()}>{item}</NavLink>
                   </ListItem>
                 ))}
               </List>
@@ -96,7 +96,7 @@ const Navbar = () => {
         ) : (
           <Box sx={{ display: 'flex' }}>
             {navItems.map((item) => (
-              <NavLink key={item} to={item}>
+              <NavLink key={item} to={item.toLowerCase()}>
                 {item}
               </NavLink>
             ))}

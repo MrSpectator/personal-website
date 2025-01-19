@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, TextField, Button, Grid, IconButton } from '@mui/material';
+import { Box, Container, Typography, TextField, Button, Grid } from '@mui/material';
+// eslint-disable-next-line
+import IconButton from '@mui/material/IconButton';
 import { motion } from 'framer-motion';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';

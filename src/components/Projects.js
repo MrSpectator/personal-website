@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'E-commerce Platform',
     description: 'A full-stack e-commerce solution built with Django and React, featuring user authentication, product management, and secure payments.',
-    image: 'https://via.placeholder.com/400x250',
+    image: '/assets/images/ecommerce-platform.jpg',
     tags: ['React', 'Django', 'PostgreSQL'],
     links: {
       github: 'https://github.com/MrSpectator/Ecommerce-Platform',
@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Email System',
     description: 'A robust email management system built with modern technologies, handling email communications efficiently and securely.',
-    image: 'https://via.placeholder.com/400x250',
+    image: '/assets/images/email-system.jpg',
     tags: ['Python', 'Django', 'SMTP'],
     links: {
       github: 'https://github.com/MrSpectator/Email',
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'A modern and responsive portfolio website showcasing projects and skills, built with React and Material-UI.',
-    image: 'https://via.placeholder.com/400x250',
+    image: '/assets/images/portfolio-website.jpg',
     tags: ['React', 'Material-UI', 'Framer Motion'],
     links: {
       github: 'https://github.com/MrSpectator/personal-website',

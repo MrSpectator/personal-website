@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
 import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const MotionBox = motion.div;
 
@@ -219,6 +219,16 @@ const Hero = () => {
           />
         </MotionBox>
       </Box>
+      <Box
+        component="img"
+        src={`${process.env.PUBLIC_URL}/path/to/your/image.jpg`}
+        alt="Hero Image"
+        sx={{
+          width: '100%',
+          height: 'auto',
+          zIndex: 0,
+        }}
+      />
     </Box>
   );
 };
