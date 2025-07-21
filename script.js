@@ -1,12 +1,67 @@
+// Staggered hero animation
+window.addEventListener('DOMContentLoaded', () => {
+  const heroEls = document.querySelectorAll('.hero > *');
+  heroEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('show'), 200 + i * 200);
+  });
+});
+
+// Section reveal on scroll
+const revealSections = document.querySelectorAll('.section-reveal');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealSections.forEach(section => {
+  revealObserver.observe(section);
+});
+
+// Experience tab switching
+const expTabs = document.querySelectorAll('.exp-tab');
+const expPanels = document.querySelectorAll('.exp-panel');
+expTabs.forEach((tab, idx) => {
+  tab.addEventListener('click', () => {
+    expTabs.forEach(t => t.classList.remove('active'));
+    expPanels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    expPanels[idx].classList.add('active');
+  });
+});
+
+// Mobile nav toggle
+const burger = document.querySelector('.navbar-burger');
+const mobileNav = document.getElementById('mobileNav');
+let navOpen = false;
+if (burger && mobileNav) {
+  burger.addEventListener('click', () => {
+    navOpen = !navOpen;
+    mobileNav.style.display = navOpen ? 'flex' : 'none';
+    burger.classList.toggle('open', navOpen);
+  });
+  // Close mobile nav on link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navOpen = false;
+      mobileNav.style.display = 'none';
+      burger.classList.remove('open');
+    });
+  });
+}
+
 // Smooth scroll for nav links
-const navLinks = document.querySelectorAll('.vertical-nav .nav-link');
+const navLinks = document.querySelectorAll('a[href^="#"]');
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
     if (target) {
+      e.preventDefault();
       window.scrollTo({
-        top: target.offsetTop - 30,
+        top: target.offsetTop - 60,
         behavior: 'smooth'
       });
     }
